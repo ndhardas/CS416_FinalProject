@@ -34,7 +34,7 @@ const svg = d3.select("svg")
 
 function renderScene1(){
 
-  d3.csv("data/Seasons_Stats.csv").then(function(dat){
+  d3.csv("Data/Seasons_Stats.csv").then(function(dat){
     var filteredData = dat.filter(function(row){
       return row.Year >= 1980 && row.PTS && row.G && row['3P'] && !(isNaN(+row.Year))
     })
@@ -181,7 +181,7 @@ function renderScene1(){
 }
 
 function renderScene2( ){ 
-d3.csv("data/Seasons_Stats.csv").then(function(stuff){
+d3.csv("Data/Seasons_Stats.csv").then(function(stuff){
 
   var filtered = stuff.filter(r=>{
     return r['Year']>=1980 && r.PTS && r["3P"] && !isNaN(+r.Year)
@@ -316,7 +316,7 @@ function renderScene3( ) {
     2021:98.2,2022:99.2,2023:98.5
   };
 
-  d3.csv("data/Seasons_Stats.csv").then(function(lerbon){
+  d3.csv("Data/Seasons_Stats.csv").then(function(lerbon){
 
     lerbon = lerbon.filter(function(d){
       return d.Year && d.Pos && d.AST && d.G
@@ -421,7 +421,7 @@ function renderScene4(   ) {
   d3.selectAll("svg > *").remove()
   d3.select("#controls").html("")
 
-  d3.csv("data/Seasons_Stats.csv").then(function(data){
+  d3.csv("Data/Seasons_Stats.csv").then(function(data){
 
     data = data.filter(function(d){
       return d.Player && d.Year && d.AST && d["3P"] && d.G &&
