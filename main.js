@@ -418,7 +418,8 @@ function renderScene3( ) {
 function renderScene4(   ) {
   const tooltip = d3.select("#tooltip");
 
-  d3.selectAll("svg > *").remove()
+  canvas.selectAll("*").remove()
+
   d3.select("#controls").html("")
 
   d3.csv("Data/Seasons_Stats.csv").then(function(data){
